@@ -1,0 +1,21 @@
+# Render Blueprint — lets Render auto-configure this service on import
+# instead of manually clicking through the dashboard. Not required (you can
+# still configure everything by hand in the UI), but recommended: it keeps
+# the deploy config in version control alongside the code.
+#
+# After connecting this repo on Render, it should detect this file and
+# offer to create the service from it. You'll still need to set
+# ELMODE_CORS_ALLOWED_ORIGINS manually in the dashboard once you know your
+# frontend's final domain (see envVars below — sync: false means Render
+# will prompt you for the value rather than guessing one).
+
+services:
+  - type: web
+    name: elmode-backend
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: ELMODE_CORS_ALLOWED_ORIGINS
+        sync: false
+    healthCheckPath: /api/simulation/status
