@@ -81,7 +81,7 @@ export function disposeVehicleAsset(asset: LoadedVehicleAsset): void {
       }
     }
   });
-  asset.gltf.parser?.cache?.removeAll?.();
+  // asset.gltf.parser?.cache?.removeAll?.();
 }
 
 function disposeMaterialAndTextures(material: THREE.Material): void {

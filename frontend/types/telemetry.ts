@@ -19,20 +19,28 @@ export type TelemetryMetricType =
 
 export type DegradationStatus = "INFO" | "WARNING" | "CRITICAL";
 
+export type ConnectionStatus =
+  | "connecting"
+  | "connected"
+  | "disconnected"
+  | "error";
+
 export interface TelemetryBroadcastMessage {
   nodeId: string;
   metric: TelemetryMetricType;
   value: number;
   unit: string;
-  timestamp: string; // ISO-8601 (java.time.Instant default serialization)
+  timestamp: string;
   status: DegradationStatus;
   source: "HARDWARE" | "MOCK";
 }
 
-export type TelemetrySnapshot = Partial<Record<TelemetryMetricType, TelemetryBroadcastMessage>>;
+export type VehicleTelemetryEvent = TelemetryBroadcastMessage;
 
-/** Rolling chart point — derived client-side from TelemetryBroadcastMessage, not a backend type. */
+export type TelemetrySnapshot =
+  Partial<Record<TelemetryMetricType, TelemetryBroadcastMessage>>;
+
 export interface ChartPoint {
-  t: number; // ms epoch, for x-axis ordering
+  t: number;
   value: number;
 }
