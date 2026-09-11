@@ -50,11 +50,6 @@ function VehicleDetailContent() {
 
           <div className="rounded-md border border-graphite-700 bg-graphite-850 p-4">
             <div className="mb-1 font-mono text-[10px] uppercase tracking-widest2 text-graphite-500">Model Asset</div>
-            <p className="text-[12px] leading-relaxed text-graphite-400">
-              Drop a vehicle.glb file into /public/models/ to replace this procedural visualization with a real 3D
-              model. Tag mesh nodes with a custom property elmodeRole = engine-bay | cooling | lubrication | battery
-              to enable diagnostic highlighting on the real asset.
-            </p>
           </div>
         </div>
       </div>
