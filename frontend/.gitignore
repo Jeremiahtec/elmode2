@@ -1,0 +1,20 @@
+# dependencies
+/node_modules
+
+# next.js build output
+/.next/
+/out/
+
+# env files — .env.local holds your local dev URLs and should never be
+# committed; production values are set directly in the Vercel dashboard
+# instead (see .env.production.example for what to enter there).
+.env*.local
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

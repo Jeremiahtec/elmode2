@@ -1,0 +1,1 @@
+This directory is where a GLTF/GLB vehicle model should be placed (e.g. vehicle.glb). See components/vehicle3d/VehicleScene.tsx for the loader path and the required userData.elmodeRole node-tagging convention.
